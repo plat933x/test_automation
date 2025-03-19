@@ -1,5 +1,3 @@
-import pytest
-
 print("Fizzbuzz game")
 
 def fizzbuzz(a,b):

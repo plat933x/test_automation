@@ -46,15 +46,6 @@ def ja_ealkomat(ile_waze=90, ile_wzrostu=150, ile_piw=3, ile_wodki=350, start_pi
     promile = driver.find_elements_by_xpath('//span[@class="tab"]')
     print(type(promile))
 
-    for i promile:
-
     driver.quit()
-
-    #print(promil_max)
-
-
-
-
-# print("Max wartosc promili wyniosła " + max_promil)
 
 ja_ealkomat()

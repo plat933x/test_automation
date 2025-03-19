@@ -6,6 +6,7 @@ class CalendarSelection():
 
     def test1(self):
         baseUrl = "http://www.southwest.com"
+        # base url which worked back in 2020
         driver = webdriver.Firefox()
         driver.maximize_window()
         driver.get(baseUrl)
