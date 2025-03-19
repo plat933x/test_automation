@@ -1,4 +1,7 @@
 print("Fizzbuzz game")
+print()
+# pare probnych linijek aby zrobic commit prosto z PYCHARM IDE
+
 
 def fizzbuzz(a,b):
     scope= list(range(a, b))
