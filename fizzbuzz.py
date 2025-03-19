@@ -1,5 +1,6 @@
 import pytest
-print("Fizzbuzz game!")
+
+print("Fizzbuzz game")
 
 def fizzbuzz(a,b):
     scope= list(range(a, b))
@@ -16,5 +17,5 @@ def fizzbuzz(a,b):
         else:
             print("Child yells " + str(i) + "!")
 
-fizzbuzz(1,40)
+fizzbuzz(5,25)
 
