@@ -4,8 +4,7 @@ Write a Python function is_valid_username(username: str) -> bool that checks whe
 Only contains letters, numbers, and underscores (_).
 Starts with a letter.
 Has a length between 5 and 15 characters.
-
-Write test cases to verify the correctness of the function.'''
+'''
 
 import re
 
