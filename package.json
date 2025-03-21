@@ -4,8 +4,7 @@
   "description": "Description here",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "jest"
+    "test": "pytest"
   },
   "dependencies": {
     "express": "^4.17.3"
