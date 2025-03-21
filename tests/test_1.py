@@ -6,8 +6,8 @@ def test_addder_integer():
 def test_addder_string():
     assert addder("koala") == False
 
-def test_addder_float():
+def test_addder_float_1():
     assert addder(2.5) == False
 
-def test_addder_float():
+def test_addder_float_2():
     assert addder(3.5) != True
