@@ -32,7 +32,7 @@ class CalendarSelection():
         time.sleep(2)
         search = driver.find_element(By.ID, 'LandingAirBookingSearchForm_submit-button').click()
 
-        #driver.quit()
+        driver.quit()
 
 print(datetime.datetime.now())
 ff = CalendarSelection()
