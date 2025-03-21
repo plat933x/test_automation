@@ -22,4 +22,4 @@ jobs:
           pip install -r requirements.txt  # jeśli masz plik zależności
 
       - name: Run tests
-        run: pytest
+        run: pytest tests
