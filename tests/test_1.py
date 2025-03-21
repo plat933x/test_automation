@@ -1,4 +1,4 @@
-from counter import addder
+from scripts import counter
 
 def test_addder_integer():
     assert addder(5) == True
