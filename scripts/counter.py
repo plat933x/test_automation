@@ -8,6 +8,4 @@ def addder(n):
         sum = prev_number + i
         print(f"Current index: {i}, prev_number: {i-1}, sum: {sum}")
         prev_number = i
-    return True
-
-addder(8)
+    return sum
