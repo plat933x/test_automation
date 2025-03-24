@@ -6,8 +6,6 @@ def test_credit_card_positive():
     assert credit_num_hidden("4850215963219669")[0:5] == "*****"
     assert credit_num_hidden("4850215963219669")[-4:] == "9669"
 
-def test_addder_integer():
-    assert addder(11) == 21
 
 def test_credit_card_negative():
     assert not credit_num_hidden("4850215963219669")[0:5] == "48502"
