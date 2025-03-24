@@ -1,7 +1,7 @@
 from scripts.counter import addder
 
 def test_addder_integer():
-    assert addder(5) == True
+    assert addder(11) == 21
 
 def test_addder_string():
     assert addder("koala") == False
