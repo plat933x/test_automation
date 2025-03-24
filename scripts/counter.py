@@ -8,8 +8,5 @@ def addder(n):
         sum = prev_number + i
         print(f"Current index: {i}, prev_number: {i-1}, sum: {sum}")
         prev_number = i
-<<<<<<< HEAD
+
     return sum
-=======
-    return sum
->>>>>>> a0bbfb6d8aa71b439cc4cb203be0bed98d65c000
