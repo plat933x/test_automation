@@ -14,7 +14,7 @@ Tech:
 - requests 2.32.3
 - selenium 4.29.0
 
-  Contact:
+Contact:
 e-mail: michaltarski@gmail.com
 LinkedIN: https://www.linkedin.com/in/micha%C5%82-tarski-9680b910a/
 ######
