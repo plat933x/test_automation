@@ -1,0 +1,8 @@
+{
+	"browser": "chrome",
+	"wait_time": 6,
+
+	"nbi": {
+		"url": "https://candymapper.com/"
+	}
+}
