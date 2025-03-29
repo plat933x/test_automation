@@ -2,9 +2,9 @@ import time, pytest
 from playwright.sync_api import Playwright
 
 @pytest.mark.parametrize("run", range(10))
-def test_create_an_account(run, playwright: Playwright) -> bool:
+def test_create_an_account(run, playwright: Playwright) -> None:
 
-    browser = playwright.chromium.launch(headless=False)
+    browser = playwright.chromium.launch(headless=True)
     context = browser.new_context()
     page = context.new_page()
     page.goto("https://candymapper.com/")
@@ -15,16 +15,12 @@ def test_create_an_account(run, playwright: Playwright) -> bool:
     time.sleep(3)
     page.get_by_role("textbox", name="First name").click()
     page.get_by_role("textbox", name="First name").type("John")
-    time.sleep(.5)
     page.get_by_role("textbox", name="Last name").click()
     page.get_by_role("textbox", name="Last name").type("Doe")
-    time.sleep(.5)
     page.get_by_role("textbox", name="Email").click()
     page.get_by_role("textbox", name="Email").type("john.doe@gmail.com")
-    time.sleep(.5)
     page.get_by_role("textbox", name="Phone (optional)").click()
     page.get_by_role("textbox", name="Phone (optional)").type("+48100200300")
-    time.sleep(.5)
     page.get_by_role("button", name="Create Account").click()
 
     check_your_email_notification = page.locator("//h4[contains(.,'Check your email')]")
@@ -33,7 +29,7 @@ def test_create_an_account(run, playwright: Playwright) -> bool:
     else:
         return False
 
-    assert True == check_your_email_notification.is_visible()
+    assert check_your_email_notification.is_visible()
 
     context.close()
     browser.close()
