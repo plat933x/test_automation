@@ -24,10 +24,6 @@ def test_create_an_account(run, playwright: Playwright) -> bool:
     page.get_by_role("button", name="Create Account").click()
 
     check_your_email_notification = page.locator("//h4[contains(.,'Check your email')]")
-    if check_your_email_notification:
-        return True
-    else:
-        return False
 
     assert check_your_email_notification.is_visible()
 
