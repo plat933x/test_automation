@@ -31,10 +31,3 @@ def test_reach_halloween_tab(browser):
     candy.go_to_halloween_tab()
 
     assert candy.go_to_halloween_tab() == True
-
-# def test_interact_with_more_dropdown_list(browser):
-#
-#     candy = CandyMapper(browser)
-#     candy.open_candy_mapper()
-#     candy.click_on_more_dropdown_list()
-#     candy.go_to_magic_object_model()

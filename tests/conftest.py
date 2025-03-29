@@ -1,12 +1,11 @@
 import pytest, json
 from selenium.webdriver import Chrome, Firefox, Edge
 from selenium.webdriver.chrome.options import Options
+from playwright.sync_api import sync_playwright
 
 DEFAULT_WAIT_TIME = 8
 SUPPORTED_BROWSERS = ['chrome', 'edge', 'firefox']
 CHROMEDRIVER_PATH = 'chromedriver'
-EDGEDRIVER_PATH = 'edgedriver'
-FIREFOX_PATH = 'geckodriver'
 CONFIG_PATH = 'config.json'
 
 # Fixture 'scope="session"' provides just 1 run before X tests
@@ -31,6 +30,12 @@ def config_browser(config):
 def config_wait_time(config):
     # Validate and return the wait time from the config data
     return config['wait_time'] if 'wait_time' in config else DEFAULT_WAIT_TIME
+
+# Fixture for initializing playwright
+@pytest.fixture(scope="session")
+def playwright():
+    with sync_playwright() as p:
+        yield p
 
 @pytest.fixture
 def browser(config_browser, config_wait_time):
