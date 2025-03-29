@@ -2,7 +2,7 @@ import time, pytest
 from playwright.sync_api import Playwright
 
 @pytest.mark.parametrize("run", range(10))
-def test_create_an_account(run, playwright: Playwright) -> None:
+def test_create_an_account(run, playwright: Playwright) -> bool:
 
     browser = playwright.chromium.launch(headless=True)
     context = browser.new_context()
