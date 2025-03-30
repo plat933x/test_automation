@@ -4,7 +4,7 @@ Sample python puzzle scripts
 Sample automated test cases with:
 - pytest
 - requests for API test automation
-- selenium for web browser test automation
+- playwright&selenium for web browser test automation
 
 CI workflow set to run with 'pytest -v' flag for detailed information about files and test cases.
 
@@ -12,6 +12,7 @@ Tech:
 - python 3.13
 - pytest 8.3.4
 - requests 2.32.3
+- playwright 1.51.0
 - selenium 4.29.0
 
 Contact:
