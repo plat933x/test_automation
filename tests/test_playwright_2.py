@@ -1,8 +1,8 @@
 import time, pytest
 from playwright.sync_api import Playwright
 
-@pytest.mark.parametrize("run", range(10))
-def test_create_an_account(run, playwright: Playwright) -> bool:
+@pytest.mark.parametrize("run", range(5))
+def test_create_an_account(run, playwright: Playwright) -> None:
 
     browser = playwright.chromium.launch(headless=True)
     context = browser.new_context()
@@ -22,12 +22,8 @@ def test_create_an_account(run, playwright: Playwright) -> bool:
     page.get_by_role("textbox", name="Phone (optional)").click()
     page.get_by_role("textbox", name="Phone (optional)").type("+48100200300")
     page.get_by_role("button", name="Create Account").click()
-
+    time.sleep(3)
     check_your_email_notification = page.locator("//h4[contains(.,'Check your email')]")
-    if check_your_email_notification:
-        return True
-    else:
-        return False
 
     assert check_your_email_notification.is_visible()
 

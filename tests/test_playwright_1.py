@@ -14,11 +14,6 @@ def test_vampira_blog_content(playwright: Playwright) -> None:
     current_url = page.url
 
     assert current_url == 'https://candymapper.com/vampiras-blog/f/candymapper-is-under-new-management-1', "Vampira's Blog has not been reached, wrong URL asserted."
-    # ---------------------
+
     context.close()
     browser.close()
-
-# # Uruchomienie testu z Playwright
-# @pytest.mark.parametrize("playwright", [sync_playwright()], indirect=True)
-# def test_candymapper(playwright):
-#     test_vampira_blog_content(playwright)
