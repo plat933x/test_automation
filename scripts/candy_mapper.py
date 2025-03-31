@@ -15,7 +15,7 @@ class CandyMapper:
     HOME_TAB = (By.XPATH, "//*[contains(text(), 'Home')]")
     WELCOME_TEXT = (By.XPATH, "//span[contains(text(),'must be done')]")
     JOIN_US_TAB = (By.XPATH, '//*[@id = "bs-2"]/span')
-    JOIN_US_VERIFY = (By.CSS_SELECTOR, "input[placeholder='Email']")
+    JOIN_US_VERIFY = (By.XPATH, "//input[@name='password']")
     HALLOWEEN_PARTY_TAB = (By.XPATH, "//a[text() = 'Halloween Party']")
     HALLOWEEN_VERIFY = (By.XPATH, "//a[normalize-space()='I Am Hosting A Party']")
     MORE_DROPDOWN_LIST = (By.ID, "2")
