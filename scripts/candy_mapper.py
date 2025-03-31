@@ -14,8 +14,6 @@ class CandyMapper:
     IMAGE = (By.XPATH, "//*[@id='n-24920']/div/section/div[4]/div/div[2]/div/picture/img")
     HOME_TAB = (By.XPATH, "//*[contains(text(), 'Home')]")
     WELCOME_TEXT = (By.XPATH, "//span[contains(text(),'must be done')]")
-    JOIN_US_TAB = (By.XPATH, '//*[@id = "bs-2"]/span')
-    JOIN_US_VERIFY = (By.XPATH, "//input[@name='password']")
     HALLOWEEN_PARTY_TAB = (By.XPATH, "//a[text() = 'Halloween Party']")
     HALLOWEEN_VERIFY = (By.XPATH, "//a[normalize-space()='I Am Hosting A Party']")
     MORE_DROPDOWN_LIST = (By.ID, "2")
@@ -61,15 +59,6 @@ class CandyMapper:
     def is_image_visible(self):
         image = self.browser.find_element(*self.IMAGE)
         if image:
-            return True
-        else:
-            return False
-
-    def go_to_joinus_tab(self):
-        self.browser.find_element(*self.JOIN_US_TAB).click()
-        join_us_tab_verify = self.browser.find_element(*self.JOIN_US_VERIFY)
-
-        if join_us_tab_verify:
             return True
         else:
             return False

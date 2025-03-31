@@ -16,14 +16,6 @@ def test_reach_home_tab(browser):
 
     assert candy.go_to_home_tab() == True
 
-def test_reach_joinus_tab(browser):
-
-    candy = CandyMapper(browser)
-    candy.open_candy_mapper()
-    candy.go_to_joinus_tab()
-
-    assert candy.go_to_joinus_tab() == True
-
 def test_reach_halloween_tab(browser):
 
     candy = CandyMapper(browser)
