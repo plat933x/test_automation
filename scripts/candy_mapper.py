@@ -14,8 +14,8 @@ class CandyMapper:
     IMAGE = (By.XPATH, "//*[@id='n-24920']/div/section/div[4]/div/div[2]/div/picture/img")
     HOME_TAB = (By.XPATH, "//*[contains(text(), 'Home')]")
     WELCOME_TEXT = (By.XPATH, "//span[contains(text(),'must be done')]")
-    JOIN_US_TAB = (By.XPATH, "//a[text() = 'JOIN US']")
-    JOINUS = (By.CSS_SELECTOR, "input[placeholder='Email']")
+    JOIN_US_TAB = (By.XPATH, '//*[@id = "bs-2"]/span')
+    JOIN_US_VERIFY = (By.CSS_SELECTOR, "input[placeholder='Email']")
     HALLOWEEN_PARTY_TAB = (By.XPATH, "//a[text() = 'Halloween Party']")
     HALLOWEEN_VERIFY = (By.XPATH, "//a[normalize-space()='I Am Hosting A Party']")
     MORE_DROPDOWN_LIST = (By.ID, "2")
@@ -67,9 +67,9 @@ class CandyMapper:
 
     def go_to_joinus_tab(self):
         self.browser.find_element(*self.JOIN_US_TAB).click()
-        joinus_tab = self.browser.find_element(*self.JOINUS)
+        join_us_tab_verify = self.browser.find_element(*self.JOIN_US_VERIFY)
 
-        if joinus_tab:
+        if join_us_tab_verify:
             return True
         else:
             return False
