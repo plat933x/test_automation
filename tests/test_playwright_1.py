@@ -10,7 +10,8 @@ def test_vampira_blog_content(playwright: Playwright) -> None:
     page.get_by_role("button", name="More").click()
     page.get_by_role("menuitem", name="Vampira's Blog").get_by_label("HomeJOIN USHalloween").click()
     page.get_by_role("button", name="Continue Reading").click()
-    page.get_by_role("figure").get_by_role("img").click()
+    page.get_by_role("figure").get_by_role("img").wait_for(state="visible")
+
     current_url = page.url
 
     assert current_url == 'https://candymapper.com/vampiras-blog/f/candymapper-is-under-new-management-1', "Vampira's Blog has not been reached, wrong URL asserted."
