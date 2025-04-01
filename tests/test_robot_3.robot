@@ -3,7 +3,7 @@ Library    SeleniumLibrary
 
 *** Variables ***
 ${URL}               https://www.saucedemo.com/
-${BROWSER}           Chrome
+${BROWSER}           firefox
 ${NAME}              performance_glitch_user
 ${PASSWORD}          secret_sauce
 ${EXPECTED_TITLE}    Swag Labs

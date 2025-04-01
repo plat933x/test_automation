@@ -3,7 +3,7 @@ Library    SeleniumLibrary
 
 *** Variables ***
 ${URL}                    https://candymapper.com
-${BROWSER}                Chrome
+${BROWSER}                firefox
 ${POPUP_CLOSE_BUTTON}     id=popup-widget25042-cta
 ${LAUNCH_BUTTON}          xpath=//a[text() = 'Launch CandyMapper']
 ${EXPECTED_TITLE}         This spooky slow service takes forever to load...
