@@ -8,6 +8,7 @@ def test_create_an_account(run, playwright: Playwright) -> None:
     context = browser.new_context()
     page = context.new_page()
     page.goto("https://candymapper.com/")
+
     page.locator("#popup-widget25042-cta").click()
     page.locator("[id=\"\\34 \"]").click()
     page.get_by_role("link", name="Create Account").click()

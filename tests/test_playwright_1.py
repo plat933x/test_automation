@@ -6,6 +6,7 @@ def test_vampira_blog_content(playwright: Playwright) -> None:
     context = browser.new_context()
     page = context.new_page()
     page.goto("https://candymapper.com/")
+
     page.locator("#popup-widget25042-cta").click()
     page.get_by_role("button", name="More").click()
     page.get_by_role("menuitem", name="Vampira's Blog").get_by_label("HomeJOIN USHalloween").click()
