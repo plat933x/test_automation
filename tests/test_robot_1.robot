@@ -10,7 +10,7 @@ ${EXPECTED_TITLE}         This spooky slow service takes forever to load...
 
 *** Test Cases ***
 Open CandyMapper And Verify Subpage Title
-    Open Browser        ${URL}    ${BROWSER}
+    Open Browser    ${URL}    ${BROWSER}    options=add_argument("--user-data-dir=/tmp/chrome-profile")
     Maximize Browser Window
     Wait Until Element Is Visible    ${POPUP_CLOSE_BUTTON}    timeout=5s
     Click Element       ${POPUP_CLOSE_BUTTON}
