@@ -28,6 +28,9 @@ jobs:
           pip install robotframework-seleniumlibrary
           pip install robotframework-requests
 
+      - name: Clean Chrome Profile
+        run: rm -rf /tmp/chrome-profile
+
       - name: Run Robot Framework Tests
         run: |
           robot -d robot_results tests/
