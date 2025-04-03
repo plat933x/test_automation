@@ -1,5 +1,5 @@
 ######
-Sample python puzzle scripts
+Sample python puzzle scripts.
 
 Sample automated test cases with:
 - pytest
