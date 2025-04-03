@@ -5,6 +5,7 @@ Sample automated test cases with:
 - pytest
 - requests for API test automation
 - playwright&selenium for web browser test automation
+- robot framework sample examples
 
 CI workflow set to run with 'pytest -v' flag for detailed information about files and test cases.
 
@@ -14,6 +15,7 @@ Tech:
 - requests 2.32.3
 - playwright 1.51.0
 - selenium 4.29.0
+- robotframework 7.2
 
 Contact:
 e-mail: michaltarski@gmail.com
