@@ -32,8 +32,7 @@ jobs:
           curl -sS https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -o google-chrome.deb
           sudo dpkg -i google-chrome.deb
           sudo apt-get install -f  # To fix dependencies
-          chromedriver_version=$(curl -sS https://chromedriver.storage.googleapis.com/135.0.7049.85)
-          wget https://chromedriver.storage.googleapis.com/$chromedriver_version/chromedriver_linux64.zip -P /tmp
+          wget https://chromedriver.storage.googleapis.com/135.0.7049.85/chromedriver_linux64.zip -P /tmp
           unzip /tmp/chromedriver_linux64.zip -d /usr/local/bin
 
       - name: Run Behave tests
