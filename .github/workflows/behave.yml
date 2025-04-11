@@ -36,4 +36,4 @@ jobs:
           unzip /tmp/chromedriver_linux64.zip -d /usr/local/bin
 
       - name: Run Behave tests
-        run: behave
+        run: behave features/
