@@ -10,8 +10,7 @@ def selenium_browser_chrome(context):
     options.add_argument("--headless")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
-
-    service = ChromeService(executable_path=ChromeDriverManager().install())
+    service = ChromeService(ChromeDriverManager().install())
     context.browser = webdriver.Chrome(service=service, options=options)
     yield context.browser
     context.browser.quit()
