@@ -3,15 +3,13 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import Select
-from typing_extensions import final
-from tests.conftest import DEFAULT_WAIT_TIME
+
 
 class CandyMapper:
 
     # Locators gathered for UI interactions with CandyMapper test webpage
-    POP_UP_BUTTON = (By.XPATH, "//*[@id=\'popup-widget25042-cta']")
-    IMAGE = (By.XPATH, "//*[@id='n-24920']/div/section/div[4]/div/div[2]/div/picture/img")
+    POP_UP_BUTTON = (By.XPATH, "//*[@id='popup-widget307423-close-icon']")
+    IMAGE = (By.ID, "n-307293")
     HOME_TAB = (By.XPATH, "//*[contains(text(), 'Home')]")
     WELCOME_TEXT = (By.XPATH, "//span[contains(text(),'must be done')]")
     HALLOWEEN_PARTY_TAB = (By.XPATH, "//a[text() = 'Halloween Party']")
