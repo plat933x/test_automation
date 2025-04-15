@@ -2,8 +2,7 @@ print("Fizzbuzz game")
 print()
 
 def fizzbuzz(a,b):
-    scope= list(range(a, b))
-    for i in scope:
+    for i in range(a,b):
         if i % 3 == 0 and i % 5 == 0:
             print(str(i) + " can be divided simultaneously per 3 and 5!")
             print("FIZZBUZZ!")

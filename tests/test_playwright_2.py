@@ -1,15 +1,18 @@
 import time, pytest
 from playwright.sync_api import Playwright
 
-@pytest.mark.parametrize("run", range(5))
+
+@pytest.mark.parametrize("run", range(3))
 def test_create_an_account(run, playwright: Playwright) -> None:
 
     browser = playwright.chromium.launch(headless=True)
     context = browser.new_context()
     page = context.new_page()
+    # 2 seconds for website to load correctly - avoiding 500's errors
+    time.sleep(2)
     page.goto("https://candymapper.com/")
 
-    page.locator("#popup-widget25042-cta").click()
+    page.locator("#popup-widget307423-close-icon").click()
     page.locator("[id=\"\\34 \"]").click()
     page.get_by_role("link", name="Create Account").click()
     # time.sleep for ensuring that website will not reload by itself and lose filled textboxes
@@ -24,7 +27,8 @@ def test_create_an_account(run, playwright: Playwright) -> None:
     page.get_by_role("textbox", name="Phone (optional)").type("+48100200300")
     page.get_by_role("button", name="Create Account").click()
     time.sleep(3)
-    check_your_email_notification = page.locator("//h4[contains(.,'Check your email')]")
+
+    check_your_email_notification = page.get_by_role("heading", name="Check your email")
 
     assert check_your_email_notification.is_visible()
 

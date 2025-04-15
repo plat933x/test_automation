@@ -1,3 +1,4 @@
+import time
 from playwright.sync_api import Playwright
 
 
@@ -6,6 +7,8 @@ def test_add_products_to_car_and_complete_the_order(playwright: Playwright) -> N
     browser = playwright.chromium.launch(headless=True)
     context = browser.new_context()
     page = context.new_page()
+    # 2 seconds for website to load correctly - avoiding 500's errors
+    time.sleep(2)
     page.goto("https://www.saucedemo.com/")
 
     page.locator("[data-test=\"username\"]").click()
