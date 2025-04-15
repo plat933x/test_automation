@@ -10,7 +10,9 @@ def selenium_browser_chrome(context):
     options.add_argument("--headless")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
-    service = ChromeService(ChromeDriverManager().install())
+    options.add_argument("--disable-gpu")
+    options.add_argument(f"--user-data-dir=/tmp/chrome-user-data-{uuid.uuid4()}")
+    service = ChromeService(ChromeDriverManager(version="135.0.7049.84").install())
     context.browser = webdriver.Chrome(service=service, options=options)
     yield context.browser
     context.browser.quit()
