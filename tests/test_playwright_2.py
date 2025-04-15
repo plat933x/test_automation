@@ -1,5 +1,5 @@
 import time, pytest
-from playwright.sync_api import Playwright
+from playwright.sync_api import Playwright, expect
 
 
 @pytest.mark.parametrize("run", range(3))
@@ -30,7 +30,8 @@ def test_create_an_account(run, playwright: Playwright) -> None:
 
     check_your_email_notification = page.get_by_role("heading", name="Check your email")
 
-    assert check_your_email_notification.is_visible()
+    expect(check_your_email_notification).to_be_visible()
+    #assert check_your_email_notification.is_visible()
 
     context.close()
     browser.close()
