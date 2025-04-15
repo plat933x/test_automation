@@ -30,7 +30,7 @@ def test_create_an_account(run, playwright: Playwright) -> None:
 
     check_your_email_notification = page.get_by_role("heading", name="Check your email")
 
-    assert check_your_email_notification.is_enabled() and check_your_email_notification.is_visible()
+    expect(check_your_email_notification).to_be_visible()
 
     context.close()
     browser.close()
