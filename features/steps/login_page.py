@@ -1,5 +1,4 @@
 from behave import given, when, then
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 
@@ -9,7 +8,7 @@ PASSWORD = "secret_sauce"
 
 @given('SauceDemo URL loaded')
 def given_step(context):
-    context.driver = webdriver.Chrome()
+    context.driver = context.browser
     context.driver.get(URL)
 
 @when('Username and password entered')
