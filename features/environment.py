@@ -16,9 +16,10 @@ def selenium_browser_chrome(context):
     yield context.browser
     context.browser.quit()
 
-# def before_all(context):
-#     use_fixture(selenium_browser_chrome, context)
-# 
+def before_all(context):
+    print("before_all log for debugging purpose")
+    use_fixture(selenium_browser_chrome, context)
+
 # def after_all(context):
 #     if hasattr(context, "browser"):
 #         context.browser.quit()
