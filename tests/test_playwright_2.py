@@ -31,7 +31,7 @@ def test_create_an_account(playwright: Playwright) -> None:
     time.sleep(3)
 
     check_your_email_notification = page.get_by_role("heading", name="Check your email")
-
+    check_your_email_notification.wait_for(timeout=10000)
     expect(check_your_email_notification).to_be_visible()
 
     context.close()
