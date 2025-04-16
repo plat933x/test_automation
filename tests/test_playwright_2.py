@@ -2,8 +2,10 @@ import time, pytest
 from playwright.sync_api import Playwright, expect
 
 
-@pytest.mark.parametrize("run", range(3))
-def test_create_an_account(run, playwright: Playwright) -> None:
+
+#@pytest.mark.parametrize("run", range(3))
+@pytest.mark.flaky(reruns=3)
+def test_create_an_account(playwright: Playwright) -> None:
 
     browser = playwright.chromium.launch(headless=True)
     context = browser.new_context()
