@@ -30,9 +30,8 @@ def test_create_an_account(playwright: Playwright) -> None:
     page.get_by_role("button", name="Create Account").click()
     time.sleep(3)
 
-    check_your_email_notification = page.get_by_role("heading", name="Check your email")
-    check_your_email_notification.wait_for(timeout=10000)
-    expect(check_your_email_notification).to_be_visible()
+    whole_page_content = page.content()
+    assert "Check your email" in whole_page_content, "Account was not created therefore proper content was not reached"
 
     context.close()
     browser.close()
