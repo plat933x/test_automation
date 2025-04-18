@@ -6,7 +6,7 @@ from playwright.sync_api import Playwright, expect
 @pytest.mark.flaky(reruns=3)
 def test_create_an_account(run, playwright: Playwright) -> None:
 
-    browser = playwright.chromium.launch(headless=True)
+    browser = playwright.chromium.launch(headless=False)
     context = browser.new_context()
     page = context.new_page()
 
@@ -17,7 +17,7 @@ def test_create_an_account(run, playwright: Playwright) -> None:
     page.locator("#popup-widget307423-close-icon").click()
     page.locator("[id=\"\\34 \"]").click()
     page.get_by_role("link", name="Create Account").click()
-    
+
     page.get_by_role("textbox", name="First name").wait_for(state="visible", timeout=7000)
     page.get_by_role("textbox", name="First name").click()
     page.get_by_role("textbox", name="First name").type("John")
