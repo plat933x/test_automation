@@ -29,3 +29,9 @@ jobs:
 
       - name: Run tests
         run: pytest tests -v
+
+      - name: Run tests with xvfb
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb
+          xvfb-run --auto-servernum --server-args='-screen 0 1920x1080x24' pytest tests -v
