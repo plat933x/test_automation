@@ -6,7 +6,7 @@ from playwright.sync_api import Playwright, expect
 @pytest.mark.flaky(reruns=3)
 def test_create_an_account(run, playwright: Playwright) -> None:
 
-    browser = playwright.chromium.launch(headless=False)
+    browser = playwright.chromium.launch(headless=True)
     context = browser.new_context()
     page = context.new_page()
 
@@ -18,18 +18,30 @@ def test_create_an_account(run, playwright: Playwright) -> None:
     page.locator("[id=\"\\34 \"]").click()
     page.get_by_role("link", name="Create Account").click()
 
-    page.get_by_role("textbox", name="First name").wait_for(state="visible", timeout=7000)
-    page.get_by_role("textbox", name="First name").click()
+    page.get_by_role("textbox", name="First name").wait_for(state="visible", timeout=3000)
+    first_name = page.get_by_role("textbox", name="First name")
+    first_name.click()
+
     page.get_by_role("textbox", name="First name").type("John")
 
-    page.get_by_role("textbox", name="Last name").click()
+    last_name = page.get_by_role("textbox", name="Last name")
+    last_name.click()
+
     page.get_by_role("textbox", name="Last name").type("Doe")
 
-    page.get_by_role("textbox", name="Email").click()
+    email = (page.get_by_role("textbox", name="Email"))
+    email.click()
+
     page.get_by_role("textbox", name="Email").type("john.doe@gmail.com")
 
-    page.get_by_role("textbox", name="Phone (optional)").click()
+    phone = (page.get_by_role("textbox", name="Phone (optional)"))
+    phone.click()
+
     page.get_by_role("textbox", name="Phone (optional)").type("+48100200300")
+
+    # page occasionaly gets reloaded by itself, to prevent error double check for first name added
+    if first_name.input_value() == "":
+        first_name.type("John")
 
     page.get_by_role("button", name="Create Account").click()
 
